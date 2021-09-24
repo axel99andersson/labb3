@@ -20,10 +20,8 @@ public class LiftThread extends Thread {
 			int floor = mon.getFloor();
 			int dir = mon.getDir();
 			mon.goToNewFloor();
-			view.closeDoors();
 			view.moveLift(floor, floor+dir);
 			mon.atNewFloor();
-			view.openDoors(floor+dir);
 			
 			} catch(InterruptedException e) {
 				e.printStackTrace();
