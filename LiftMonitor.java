@@ -71,11 +71,13 @@ public class LiftMonitor {
 		} else if(floor == 6) {
 			direction = -1;
 		}
+		view.closeDoors();
 	}
 	
 	public synchronized void atNewFloor() {
 		moving = false;
 		notifyAll();
+		view.openDoors(floor);
 	}
 	
 	public synchronized void waitUntilPassenger() throws InterruptedException {
